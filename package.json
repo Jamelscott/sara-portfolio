@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://jamelscott.github.io/sara-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

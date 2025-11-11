@@ -12,7 +12,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Hero", to: "hero", isExternal: false },
     { name: "About", to: "about", isExternal: false },
-    { name: "Work", to: "projects", isExternal: false },
+    // { name: "Work", to: "projects", isExternal: false },
     { name: "Experience", to: "experience", isExternal: false },
     { name: "Contact", to: "contact", isExternal: false },
   ];

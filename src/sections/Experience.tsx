@@ -19,6 +19,7 @@ const Experience = () => {
         "Develop scoring rubrics and QA checklists to ensure reliability of automated scoring",
       ],
     },
+
     {
       id: 2,
       role: "Curriculum Designer — Additional Qualification Programs",
@@ -229,23 +230,6 @@ const Experience = () => {
               </div>
             </motion.article>
           ))}
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-600 mb-6">Interested in working together?</p>
-          <a
-            href="#contact"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors focus-outline"
-            aria-label="Get in touch"
-          >
-            Get In Touch
-          </a>
         </motion.div>
       </div>
     </section>

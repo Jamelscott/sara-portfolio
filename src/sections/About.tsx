@@ -1,31 +1,49 @@
-import { motion } from 'framer-motion';
-import { Code, Palette, Zap, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Briefcase, BookOpen, Zap, Users } from "lucide-react";
 
 const About = () => {
   const skills = [
     {
-      icon: <Code size={24} />,
-      title: 'Frontend Development',
-      description: 'Building responsive and interactive user interfaces with modern frameworks and libraries.',
-      technologies: ['React', 'TypeScript', 'Next.js', 'Vue.js'],
+      icon: <Briefcase size={24} />,
+      title: "Project & Sector Experience",
+      description:
+        "Project experience spans K–12 education, university and college programming, adult learning, and corporate training across business, healthcare, public sector, and edtech.",
+      technologies: [
+        "Digital assessments",
+        "Online courses",
+        "Faculty development",
+        "Bilingual literacy",
+      ],
     },
     {
-      icon: <Palette size={24} />,
-      title: 'UI/UX Design',
-      description: 'Creating intuitive and beautiful designs that provide excellent user experiences.',
-      technologies: ['Figma', 'Adobe Creative Suite', 'Tailwind CSS', 'Framer Motion'],
-    },
-    {
-      icon: <Zap size={24} />,
-      title: 'Performance Optimization',
-      description: 'Optimizing applications for speed, accessibility, and search engine performance.',
-      technologies: ['Lighthouse', 'Web Vitals', 'Webpack', 'Vite'],
+      icon: <BookOpen size={24} />,
+      title: "Evidence-based Instruction",
+      description:
+        "Instructional decisions grounded in Backward Design, UDL, Science of Reading, mastery-based learning, cognitive load theory, and adult learning principles.",
+      technologies: [
+        "Backward Design",
+        "UDL",
+        "Science of Reading",
+        "Cognitive Load Theory",
+      ],
     },
     {
       icon: <Users size={24} />,
-      title: 'Collaboration',
-      description: 'Working effectively in teams and communicating technical concepts clearly.',
-      technologies: ['Git', 'Agile', 'Code Reviews', 'Documentation'],
+      title: "Bilingual Literacy & Program Leadership",
+      description:
+        "Apprendre Franco-Fun! centres on French literacy development through structured, confidence-building, play-informed instruction.",
+      technologies: [
+        "Play-based literacy",
+        "Tutor training",
+        "Bilingual resources",
+      ],
+    },
+    {
+      icon: <Zap size={24} />,
+      title: "Freelance & Production",
+      description:
+        "Freelance contributions include Articulate 360 (Storyline, Rise), LMS builds, content migration, QA, and rapid adaptation to new platforms and tools.",
+      technologies: ["Articulate 360", "SCORM/xAPI", "LMS configuration", "QA"],
     },
   ];
 
@@ -53,14 +71,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-white"
+      className="py-20 bg-white mt-20 sm:mt-0"
       aria-label="About me section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="text-center mb-16"
         >
@@ -71,17 +89,32 @@ const About = () => {
             About Me
           </motion.h2>
           <motion.p
+            id="1"
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            Bilingual senior instructional designer and curriculum strategist with 10+ years of experience. Based in Ontario. Available for remote-friendly freelance and contract work.
+            Bilingual senior instructional designer and curriculum strategist
+            with 10+ years of experience. Based in Ontario. Available for
+            remote-friendly freelance and contract work.
+          </motion.p>
+          <div aria-hidden className="h-6" />
+          <motion.p
+            id="2"
+            variants={itemVariants}
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+          >
+            Currently designing provincial digital assessments with Vretta,
+            developing Additional Qualification courses for educators at
+            Laurentian University, and leading Apprendre Franco-Fun!, a
+            Canada-wide French tutoring program serving over 1,000 students per
+            year.
           </motion.p>
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
@@ -91,9 +124,7 @@ const About = () => {
               variants={itemVariants}
               className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="text-blue-600 mb-4">
-                {skill.icon}
-              </div>
+              <div className="text-blue-600 mb-4">{skill.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {skill.title}
               </h3>
@@ -117,21 +148,21 @@ const About = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="mt-16 text-center"
         >
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl"
+            className="bg-linear-to-r from-blue-50 to-purple-50 p-8 rounded-2xl"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Let's Work Together
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              I'm always excited to take on new challenges and collaborate on interesting projects. 
-              Whether you have a specific idea in mind or just want to explore possibilities, 
-              I'd love to hear from you.
+              I'm always excited to take on new challenges and collaborate on
+              interesting projects. Whether you have a specific idea in mind or
+              just want to explore possibilities, I'd love to hear from you.
             </p>
             <a
               href="#contact"

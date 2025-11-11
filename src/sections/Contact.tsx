@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { Send, Mail, MapPin, Phone } from "lucide-react";
+import { Send, MapPin, Phone } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 interface FormData {
@@ -26,19 +26,18 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
-
+    console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
     try {
       // Replace these with your EmailJS service details
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: data.name,
-          from_email: data.email,
+          name: data.name,
+          email: data.email,
           message: data.message,
-          to_email: "fadelsa19@gmail.com",
         },
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setSubmitStatus("success");
@@ -322,7 +321,7 @@ const Contact = () => {
                 >
                   <p className="text-red-800">
                     Sorry, there was an error sending your message. Please try
-                    again or contact me directly.
+                    again.
                   </p>
                 </div>
               )}

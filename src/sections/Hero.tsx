@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center"
+      className="min-h-screen flex items-center pt-16 sm:pt-0"
       style={{ backgroundColor: "#F2E7E5" }}
       aria-label="Hero section"
     >
@@ -34,11 +34,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="flex items-center gap-2 text-grey-600"
             >
-              <MapPin size={18} className="text-blue-600" />
+              <MapPin size={18} className="text-grey-600" />
               <span className="text-sm sm:text-base">Kitchener, Ontario</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
               Hello, I'm Sara Prattis.
             </h1>
 
@@ -46,7 +46,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl sm:text-2xl text-gray-600 leading-relaxed"
+              className="text-lg sm:text-xl text-gray-600 leading-relaxed"
             >
               Bilingual Learning Experience Designer (LXD) Curriculum &
               Assessment Specialist
@@ -55,7 +55,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl sm:text-2xl text-gray-600 leading-relaxed"
+              className="text-lg sm:text-xl text-gray-600 leading-relaxed"
             >
               I design intuitive, engaging learning experiences across K-12,
               higher education, corporate, and public-sector projects -- in both
@@ -71,7 +71,7 @@ const Hero = () => {
             className="flex justify-center lg:justify-end"
           >
             <div
-              className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-100 to-purple-100"
+              className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-linear-to-br from-blue-100 to-purple-100"
               role="img"
               aria-label="Profile image placeholder"
             />

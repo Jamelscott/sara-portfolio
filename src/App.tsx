@@ -3,7 +3,6 @@ import Navigation from "./components/Navigation";
 import SkipLink from "./components/SkipLink";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";

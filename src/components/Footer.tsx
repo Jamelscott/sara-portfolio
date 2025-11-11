@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import LinkedInIcon from "./LinkedInIcon";
 
 const Footer = () => {
@@ -42,8 +42,7 @@ const Footer = () => {
 
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Sara. All rights reserved. Built with
-              React, TypeScript, and Tailwind CSS.
+              © {new Date().getFullYear()} Sara Prattis. All rights reserved.
             </p>
           </div>
         </div>
