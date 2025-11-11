@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { Send, Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
   name: string;
@@ -12,7 +12,9 @@ interface FormData {
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const {
     register,
@@ -23,27 +25,27 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
       // Replace these with your EmailJS service details
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
         {
           from_name: data.name,
           from_email: data.email,
           message: data.message,
-          to_email: 'fadelsa19@gmail.com',
+          to_email: "fadelsa19@gmail.com",
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
       );
 
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       reset();
     } catch (error) {
-      console.error('EmailJS error:', error);
-      setSubmitStatus('error');
+      console.error("EmailJS error:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -51,21 +53,15 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail size={24} />,
-      title: 'Email',
-      content: 'fadelsa19@gmail.com',
-      link: 'mailto:fadelsa19@gmail.com',
-    },
-    {
       icon: <MapPin size={24} />,
-      title: 'Location',
-      content: 'Available for Remote Work',
+      title: "Location",
+      content: "Available for Remote Work",
       link: null,
     },
     {
       icon: <Phone size={24} />,
-      title: 'Phone',
-      content: 'Available upon request',
+      title: "Phone",
+      content: "Available upon request",
       link: null,
     },
   ];
@@ -101,7 +97,7 @@ const Contact = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="text-center mb-16"
         >
@@ -115,8 +111,9 @@ const Contact = () => {
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            I'm always interested in new opportunities and collaborations. 
-            Whether you have a project in mind or just want to connect, I'd love to hear from you.
+            I'm always interested in new opportunities and collaborations.
+            Whether you have a project in mind or just want to connect, I'd love
+            to hear from you.
           </motion.p>
         </motion.div>
 
@@ -125,7 +122,7 @@ const Contact = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
           >
             <motion.h3
@@ -134,7 +131,7 @@ const Contact = () => {
             >
               Let's Start a Conversation
             </motion.h3>
-            
+
             <div className="space-y-6">
               {contactInfo.map((info) => (
                 <motion.div
@@ -142,9 +139,7 @@ const Contact = () => {
                   variants={itemVariants}
                   className="flex items-center space-x-4"
                 >
-                  <div className="text-blue-600">
-                    {info.icon}
-                  </div>
+                  <div className="text-blue-600">{info.icon}</div>
                   <div>
                     <h4 className="font-medium text-gray-900">{info.title}</h4>
                     {info.link ? (
@@ -168,7 +163,7 @@ const Contact = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
           >
             <motion.form
@@ -187,22 +182,26 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  {...register('name', {
-                    required: 'Name is required',
+                  {...register("name", {
+                    required: "Name is required",
                     minLength: {
                       value: 2,
-                      message: 'Name must be at least 2 characters',
+                      message: "Name must be at least 2 characters",
                     },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
+                    errors.name ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="Your full name"
-                  aria-invalid={errors.name ? 'true' : 'false'}
-                  aria-describedby={errors.name ? 'name-error' : undefined}
+                  aria-invalid={errors.name ? "true" : "false"}
+                  aria-describedby={errors.name ? "name-error" : undefined}
                 />
                 {errors.name && (
-                  <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p
+                    id="name-error"
+                    className="mt-1 text-sm text-red-600"
+                    role="alert"
+                  >
                     {errors.name.message}
                   </p>
                 )}
@@ -218,22 +217,26 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  {...register('email', {
-                    required: 'Email is required',
+                  {...register("email", {
+                    required: "Email is required",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Please enter a valid email address',
+                      message: "Please enter a valid email address",
                     },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                    errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="your.email@example.com"
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  aria-invalid={errors.email ? "true" : "false"}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                 />
                 {errors.email && (
-                  <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p
+                    id="email-error"
+                    className="mt-1 text-sm text-red-600"
+                    role="alert"
+                  >
                     {errors.email.message}
                   </p>
                 )}
@@ -249,22 +252,28 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
-                  {...register('message', {
-                    required: 'Message is required',
+                  {...register("message", {
+                    required: "Message is required",
                     minLength: {
                       value: 10,
-                      message: 'Message must be at least 10 characters',
+                      message: "Message must be at least 10 characters",
                     },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical ${
-                    errors.message ? 'border-red-500' : 'border-gray-300'
+                    errors.message ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="Tell me about your project or just say hello..."
-                  aria-invalid={errors.message ? 'true' : 'false'}
-                  aria-describedby={errors.message ? 'message-error' : undefined}
+                  aria-invalid={errors.message ? "true" : "false"}
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
                 />
                 {errors.message && (
-                  <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p
+                    id="message-error"
+                    className="mt-1 text-sm text-red-600"
+                    role="alert"
+                  >
                     {errors.message.message}
                   </p>
                 )}
@@ -274,7 +283,9 @@ const Contact = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus-outline flex items-center justify-center gap-2"
-                aria-label={isSubmitting ? 'Sending message...' : 'Send message'}
+                aria-label={
+                  isSubmitting ? "Sending message..." : "Send message"
+                }
               >
                 {isSubmitting ? (
                   <>
@@ -290,26 +301,28 @@ const Contact = () => {
               </button>
 
               {/* Status Messages */}
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <div
                   className="p-4 bg-green-50 border border-green-200 rounded-lg"
                   role="alert"
                   aria-live="polite"
                 >
                   <p className="text-green-800">
-                    Thank you! Your message has been sent successfully. I'll get back to you soon.
+                    Thank you! Your message has been sent successfully. I'll get
+                    back to you soon.
                   </p>
                 </div>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <div
                   className="p-4 bg-red-50 border border-red-200 rounded-lg"
                   role="alert"
                   aria-live="polite"
                 >
                   <p className="text-red-800">
-                    Sorry, there was an error sending your message. Please try again or contact me directly.
+                    Sorry, there was an error sending your message. Please try
+                    again or contact me directly.
                   </p>
                 </div>
               )}

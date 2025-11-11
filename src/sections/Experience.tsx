@@ -1,51 +1,118 @@
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Briefcase, Calendar } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: 'Learning Experience Designer',
-      company: 'Educational Organization',
-      location: 'Kitchener, Ontario',
-      period: '2020 - Present',
-      type: 'Full-time',
-      description: 'Design and develop engaging learning experiences for K-12, higher education, and corporate training programs in both English and French.',
+      role: "Instructional Designer — Interactive Learning & Assessment Design",
+      company: "Vretta (Provincial Digital Assessments)",
+      location: "Remote / Ontario",
+      period: "2023 - Present",
+      type: "Contract",
+      description:
+        "Design interactive digital assessments and learning activities used at scale across provincial programs.",
       responsibilities: [
-        'Design curriculum and assessment frameworks aligned with learning objectives',
-        'Develop accessible, engaging content for diverse learner populations',
-        'Collaborate with subject matter experts and stakeholders',
-        'Implement evidence-based instructional design principles',
+        "Design and prototype item interactions and assessment flows for digital platforms",
+        "Collaborate with psychometricians and SMEs to align items to standards",
+        "Create accessible, responsive assessment content compatible with multiple devices",
+        "Develop scoring rubrics and QA checklists to ensure reliability of automated scoring",
       ],
     },
     {
       id: 2,
-      role: 'Curriculum & Assessment Specialist',
-      company: 'Previous Organization',
-      location: 'Ontario',
-      period: '2018 - 2020',
-      type: 'Full-time',
-      description: 'Specialized in curriculum development and assessment design for bilingual educational programs.',
+      role: "Curriculum Designer — Additional Qualification Programs",
+      company: "Laurentian University",
+      location: "Sudbury, Ontario",
+      period: "2021 - 2023",
+      type: "Part-time / Contract",
+      description:
+        "Developed curriculum and resources for Additional Qualification (AQ) programs focused on pedagogy and assessment.",
       responsibilities: [
-        'Created comprehensive assessment strategies for various learning contexts',
-        'Ensured alignment between curriculum, instruction, and assessment',
-        'Provided bilingual support for educational materials',
-        'Conducted training sessions for educators and instructional staff',
+        "Design course outlines, learning objectives, and assessment strategies for AQ cohorts",
+        "Produce instructor guides and learner-facing materials in English and French",
+        "Deliver workshops and synchronous sessions for teacher candidates",
+        "Coordinate peer review cycles and incorporate educator feedback into course revisions",
       ],
     },
     {
       id: 3,
-      role: 'Instructional Designer',
-      company: 'Education Partner',
-      location: 'Ontario',
-      period: '2015 - 2018',
-      type: 'Contract',
-      description: 'Designed and implemented instructional materials for diverse learning environments.',
+      role: "Founder — Bilingual Learning Platform & Tutoring Initiative",
+      company: "Apprendre Franco-Fun!",
+      location: "Ontario / Remote",
+      period: "2019 - Present",
+      type: "Founder",
+      description:
+        "Built a bilingual (English/French) learning and tutoring platform focused on early literacy and engagement through play.",
       responsibilities: [
-        'Developed engaging learning activities and multimedia content',
-        'Applied adult learning principles to professional development programs',
-        'Evaluated program effectiveness and made data-driven improvements',
-        'Collaborated with cross-functional teams on large-scale projects',
+        "Lead product design and curriculum strategy for bilingual offerings",
+        "Develop tutoring resources, lesson plans, and play-based literacy activities",
+        "Manage community outreach, partnerships, and tutor training",
+        "Monitor learner progress and iterate content based on outcomes and feedback",
+      ],
+    },
+    {
+      id: 4,
+      role: "Curriculum & Resource Developer — French Language & Early Years",
+      company: "Conseil scolaire catholique Providence (CSC Providence)",
+      location: "Ontario",
+      period: "2017 - 2020",
+      type: "Contract / Project",
+      description:
+        "Developed curriculum resources and early years materials to support French-language instruction across the board.",
+      responsibilities: [
+        "Create play-based literacy resources and thematic units for early years classrooms",
+        "Align materials to provincial curricular expectations and language outcomes",
+        "Work with teachers to pilot resources and refine based on classroom data",
+        "Provide localized adaptations and bilingual teacher notes",
+      ],
+    },
+    {
+      id: 5,
+      role: "Contract Instructional Designer — Coding & STEM curriculum for girls",
+      company: "Hackergal",
+      location: "Toronto / Remote",
+      period: "2016 - 2018",
+      type: "Contract",
+      description:
+        "Designed inclusive coding and STEM curriculum to engage girls and underrepresented learners in technology.",
+      responsibilities: [
+        "Develop age-appropriate coding modules and hands-on activities",
+        "Ensure materials are inclusive and culturally-responsive",
+        "Train instructors and volunteers on facilitation and classroom management",
+        "Measure engagement and learning gains to iterate on program design",
+      ],
+    },
+    {
+      id: 6,
+      role: "Learning Materials Developer — Articulate 360 & LMS Builds",
+      company: "College / University & Corporate Client Projects",
+      location: "Contract / Remote",
+      period: "2014 - Present",
+      type: "Freelance / Contract",
+      description:
+        "Produce e-learning modules, Storyline/Rise content, and LMS integrations for higher education and corporate clients.",
+      responsibilities: [
+        "Design and build Articulate Storyline and Rise courses with interactive elements",
+        "Package content for SCORM/xAPI and deploy to multiple LMS platforms",
+        "Perform content migrations and maintain versioned course assets",
+        "Collaborate with SMEs to turn learning outcomes into assessment and activities",
+      ],
+    },
+    {
+      id: 7,
+      role: "Content Creator — K–12 Literacy & French Immersion",
+      company: "K–12 Literacy & French Immersion",
+      location: "Ontario / Remote",
+      period: "2012 - Present",
+      type: "Freelance",
+      description:
+        "Create play-based literacy materials and resources to support French immersion and early years learning.",
+      responsibilities: [
+        "Author play-based lesson plans and literacy centers for early years",
+        "Develop bilingual flashcards, decodable readers, and activity packs",
+        "Test resources in classrooms and iterate on pacing and scaffolding",
+        "Provide teacher-facing differentiation strategies and assessment tools",
       ],
     },
   ];
@@ -81,7 +148,7 @@ const Experience = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="text-center mb-16"
         >
@@ -95,15 +162,16 @@ const Experience = () => {
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            Over the years, I've had the privilege of working with diverse organizations 
-            to create meaningful learning experiences that make a difference.
+            Over the years, I've had the privilege of working with diverse
+            organizations to create meaningful learning experiences that make a
+            difference.
           </motion.p>
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
           className="space-y-8"
         >
@@ -115,7 +183,7 @@ const Experience = () => {
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div className="flex items-start gap-4 mb-4 md:mb-0">
-                  <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                  <div className="bg-blue-100 p-3 rounded-lg shrink-0">
                     <Briefcase className="text-blue-600" size={24} />
                   </div>
                   <div>
@@ -130,7 +198,7 @@ const Experience = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-2 text-gray-600 md:ml-4">
                   <Calendar size={16} />
                   <span className="text-sm font-medium">{exp.period}</span>
@@ -151,8 +219,10 @@ const Experience = () => {
                       key={idx}
                       className="flex items-start gap-2 text-gray-700"
                     >
-                      <span className="text-blue-600 mt-1 flex-shrink-0">•</span>
-                      <span className="text-sm leading-relaxed">{responsibility}</span>
+                      <span className="text-blue-600 shrink-0">•</span>
+                      <span className="mt-0.5 text-sm leading-relaxed">
+                        {responsibility}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -164,13 +234,11 @@ const Experience = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={itemVariants}
           className="text-center mt-12"
         >
-          <p className="text-gray-600 mb-6">
-            Interested in working together?
-          </p>
+          <p className="text-gray-600 mb-6">Interested in working together?</p>
           <a
             href="#contact"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors focus-outline"

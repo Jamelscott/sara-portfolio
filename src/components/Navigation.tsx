@@ -1,31 +1,31 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { Menu, X, ArrowUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import LinkedInIcon from './LinkedInIcon';
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { Menu, X, ArrowUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import LinkedInIcon from "./LinkedInIcon";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const navItems = [
-    { name: 'Hero', to: 'hero', isExternal: false },
-    { name: 'About', to: 'about', isExternal: false },
-    { name: 'Work', to: 'projects', isExternal: false },
-    { name: 'Experience', to: 'experience', isExternal: false },
-    { name: 'Contact', to: 'contact', isExternal: false },
+    { name: "Hero", to: "hero", isExternal: false },
+    { name: "About", to: "about", isExternal: false },
+    { name: "Work", to: "projects", isExternal: false },
+    { name: "Experience", to: "experience", isExternal: false },
+    { name: "Contact", to: "contact", isExternal: false },
   ];
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setIsOpen(false);
       }
     };
 
     const handleScroll = () => {
-      console.log('Scroll position:', window.scrollY); // Debug log
+      console.log("Scroll position:", window.scrollY); // Debug log
       if (window.scrollY > 0) {
         setShowScrollTop(true);
       } else {
@@ -33,11 +33,11 @@ const Navigation = () => {
       }
 
       // Detect if we're in the Hero section (near the top)
-      const heroSection = document.getElementById('hero');
+      const heroSection = document.getElementById("hero");
       if (heroSection) {
         const heroBottom = heroSection.offsetHeight;
         if (window.scrollY < heroBottom - 100) {
-          setActiveSection('hero');
+          setActiveSection("hero");
         }
       }
     };
@@ -45,19 +45,19 @@ const Navigation = () => {
     // Check initial scroll position
     handleScroll();
 
-    document.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('scroll', handleScroll);
-    
+    document.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md shadow-sm"
-      style={{ backgroundColor: '#EBF8FD' }}
+      style={{ backgroundColor: "#EBF8FD" }}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -99,21 +99,25 @@ const Navigation = () => {
                 offset={-80}
                 onSetActive={() => setActiveSection(item.to)}
                 className={`cursor-pointer px-3 py-2 text-sm font-medium transition-colors duration-200 focus-outline rounded-md ${
-                  item.to === 'hero' ? 'hidden' : ''
+                  item.to === "hero" ? "hidden" : ""
                 } ${
-                    activeSection === item.to && activeSection !== 'hero'
-                    ? 'text-blue-700 bg-blue-100'
-                    : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                  activeSection === item.to && activeSection !== "hero"
+                    ? "text-blue-700 bg-blue-100"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
                 }`}
-                aria-current={activeSection === item.to && activeSection !== 'hero' ? 'page' : undefined}
+                aria-current={
+                  activeSection === item.to && activeSection !== "hero"
+                    ? "page"
+                    : undefined
+                }
               >
                 {item.name}
               </Link>
             ))}
-            
+
             {/* LinkedIn Icon Link */}
             <a
-              href="https://www.linkedin.com/in/sarapratis"
+              href="https://www.linkedin.com/in/saraprattis"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-blue-700 transition-colors focus-outline p-2 rounded-md hover:bg-blue-50"
@@ -129,7 +133,7 @@ const Navigation = () => {
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-blue-50 focus-outline"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -142,7 +146,7 @@ const Navigation = () => {
           <motion.div
             id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-gray-200"
           >
@@ -158,18 +162,22 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   onSetActive={() => setActiveSection(item.to)}
                   className={`block px-3 py-2 text-base font-medium cursor-pointer focus-outline rounded-md ${
-                    item.to === 'hero' ? 'hidden' : ''
+                    item.to === "hero" ? "hidden" : ""
                   } ${
-                    activeSection === item.to && activeSection !== 'hero'
-                      ? 'text-blue-700 bg-blue-100'
-                      : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                    activeSection === item.to && activeSection !== "hero"
+                      ? "text-blue-700 bg-blue-100"
+                      : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
                   }`}
-                  aria-current={activeSection === item.to && activeSection !== 'hero' ? 'page' : undefined}
+                  aria-current={
+                    activeSection === item.to && activeSection !== "hero"
+                      ? "page"
+                      : undefined
+                  }
                 >
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* LinkedIn Icon Link - Mobile */}
               <a
                 href="https://www.linkedin.com/in/jamelscott"
