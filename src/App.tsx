@@ -10,14 +10,14 @@ import Footer from "./components/Footer";
 function App() {
   useEffect(() => {
     // Set document title for accessibility
-    document.title = "Sara - Frontend Developer & Designer";
+    document.title = "Sara - Bilingual LXD";
 
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "Sara is a passionate frontend developer and designer creating beautiful, accessible, and performant web experiences."
+        "design intuitive, engaging learning experiences across K-12, higher education, corporate, and public-sector projects -- in both English and French."
       );
     }
   }, []);

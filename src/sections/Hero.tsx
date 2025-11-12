@@ -15,8 +15,8 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center pt-16 sm:pt-0"
-      style={{ backgroundColor: "#F2E7E5" }}
+      className="min-h-screen flex items-center"
+      style={{ backgroundColor: "#F0EBDF" }}
       aria-label="Hero section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -35,7 +35,7 @@ const Hero = () => {
               className="flex items-center gap-2 text-grey-600"
             >
               <MapPin size={18} className="text-grey-600" />
-              <span className="text-sm sm:text-base">Kitchener, Ontario</span>
+              <span className="text-sm sm:text-base">Ontario, Canada</span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
